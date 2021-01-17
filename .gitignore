@@ -1,2 +1,8 @@
-config
 practice.py
+keys.py
+config
+settings.py
+db.sqlite3
+Myproject/Myapp/__pycache__/
+Myproject/Myproject/__pycache__/
+
