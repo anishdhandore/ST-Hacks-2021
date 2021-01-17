@@ -1,4 +1,4 @@
-### Preserving Paws
+# Preserving Paws
 
 ## Inspiration
 In the recent times, it is clearly visible to us the violence and the ill-treatment dogs have been exposed to. Spread love, by adopting, rescuing and giving shelter to the canines. I made this web application to encourage people to adopt dogs and also to educate thems about the different breeds of dogs. Also, we many a time witness violence against these animals and just let that go for we feel so helpless. For all these reasons, I decided to take a step to serve the dog community, to help them and to establish a stronger connection with them.
