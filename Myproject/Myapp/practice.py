@@ -8,7 +8,7 @@ import smtplib
 import os
 
 EMAIL_ADDRESS="anish.dhandore@gmail.com"
-EMAIL_PASSWORD = "Passwordan1$"
+EMAIL_PASSWORD = "****"
 
 with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
     smtp.ehlo()
