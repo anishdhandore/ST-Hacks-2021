@@ -9,7 +9,7 @@ access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJWSHA0elVodXQ3Rk1
 
 # gmail credentials
 email_address = "anish.dhandore@gmail.com"
-email_password = "Passwordan1$"
+email_password = "****"
 
 # wolfram api
 app_id = "THLPVT-K87YAXLUWE"
