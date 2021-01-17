@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Help</title>
-    <link rel="stylesheet" type="text/css" href="static/css/contact.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/help.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
-<body style="background-color:#9c9c9c;">
+<body style="background-color: #141414;">
     <nav class="navbar navbar-expand-sm navbar-dark bg-warning">
         <div class="container">
           <a href="#" class="navbar-brand">Preserving Paws</a>
@@ -40,13 +40,33 @@
       {% endfor %}
       </strong>
       {% endif %}
+      
+      <div class="container-fluid" style="background-color: #e0e0e0">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="container my-3">
+              <img src="/static/images/help_big.jpg" alt="help">
+            </div>
+          </div>
+          <div class="col-sm-8">
+              <p class="display-4">
+                Report to the World Animal Protection Organization!
+              </p>
+              <p class="lead">
+                Do you want to contact higher authorities for legal help and to report cases of violence against
+                dogs in particular? Fill out the form below and we will send out the information to you via
+                your gmail shortly. Thank you!
+              </p>
+          </div>
+        </div>
+      </div>
 
-      <div class="container">
-        <h1 class="title text-center">
+      <div class="container-fluid">
+        <h1 class="title fst-italic text-center mt-3" style="color: #b8f8fc;">
           Contact authorities in matters of serious help!
         </h1>
 
-        <form method="post" action="/help/" class="form-group" style="padding-left: 300px;">
+        <form method="post" action="/help/" class="form-group mt-4 mb-5" style="padding-left: 300px;">
           {% csrf_token %}
           <div class="row">
             <div class="col-sm-4">
