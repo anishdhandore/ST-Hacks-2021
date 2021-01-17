@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Help</title>
+    <link rel="stylesheet" type="text/css" href="static/css/contact.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body style="background-color:#9c9c9c;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-warning">
+        <div class="container">
+          <a href="#" class="navbar-brand">Preserving Paws</a>
+    
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="/search/" class="nav-link">Dogopedia</a>
+              </li>
+              <li class="nav-item">
+                  <a href="/adopt/" class="nav-link">Adopt&Rescue</a>
+              </li>
+              <li class="nav-item">
+                <a href="/help/" class="nav-link">Emergency Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% if messages %}
+      <strong class="messages text-center lead" style="font-size: x-large;">
+      {% for message in messages %}
+      <div {% if message.tags %} class="{{ message.tags }} bg-info"{% endif %}>{{ message }}</div>
+      {% endfor %}
+      </strong>
+      {% endif %}
+
+      <div class="container">
+        <h1 class="title text-center">
+          Contact authorities in matters of serious help!
+        </h1>
+
+        <form method="post" action="/help/" class="form-group" style="padding-left: 300px;">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="firstname" class="form-label">First name</label>
+              <input type="firstname" class="form-control" id="firstname" name="firstname">
+            </div>
+            <div class="col-sm-4">
+              <label for="lastname" class="form-label">Last name</label>
+              <input type="lastname" class="form-control" id="lastname" name="lastname">
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email">
+          </div>
+          <div class="row">
+            <div class="col-sm-8">
+              <label for="city" class="form-label">Country</label>
+              <input type="text" class="form-control" id="country" name="country">
+            </div>
+          </div>
+            <div class="col-sm-4">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip" name="zip">
+            </div>
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </form>
+      </div>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopt&Rescue</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/adopt.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-warning">
+      <div class="container">
+        <a href="#" class="navbar-brand">Preserving Paws</a>
+
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/search/" class="nav-link">Dogopedia</a>
+            </li>
+            <li class="nav-item">
+              <a href="/adopt/" class="nav-link active">Adopt&Rescue</a>
+            </li>
+            <li class="nav-item">
+              <a href="/help/" class="nav-link">Emergency Help</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h3 class="lead text-center mt-5" style="font-size: 40px;">Search here:</h3>
+
+    <form method="POST" action="/adopt/">
+      {% csrf_token %}
+      <div class="container px-5 mb-5">
+        <div class="row g-3 px-5 mx-5">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="City"
+            name="city"
+            aria-label="default input example"
+          />
+          <input
+            class="form-control"
+            type="text"
+            placeholder="State"
+            name="state"
+            aria-label="default input example"
+          />
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Max distance (in miles)"
+            name="distance"
+            aria-label="default input example"
+          />
+          <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="h1 text-center mb-5 text-muted">{{statement}}</div>
+        {% for i in complete_data %}
+        <div class="row my-3">
+          <div class="col sm-4">
+            <img class="img-thumbnail" src={{i.photo}} alt="img">
+          </div>
+          <div class="col sm-6">
+            <h2 class="lead mt-3" style="font-size: x-large;">
+              <strong>Name:</strong> {{i.name}}<br>
+              <strong>Pincode:</strong> {{i.pincode}}<br>
+              <strong>E-mail:</strong> {{i.email}}<br>
+              <strong>Phone:</strong> {{i.phone}}<br>
+              <strong>Adoption policy:</strong> {{i.policy}}<br>
+            </h2>
+            <a href={{i.url}}>Visit page!</a>
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
+      </div>
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

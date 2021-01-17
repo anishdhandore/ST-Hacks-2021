@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="static/css/home.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+  
+        <nav class="navbar navbar-expand-sm navbar-dark bg-warning">
+          <div class="container">
+            <a href="#" class="navbar-brand">Preserving Paws</a>
+      
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/search/" class="nav-link">Dogopedia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/adopt/" class="nav-link">Adopt&Rescue</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/help/" class="nav-link">Emergency Help</a>
+                </li>
+                {% if user.is_authenticated %}
+                <uL class="navbar-nav">
+                <li class="nav-item mt-2 mx-2" style="padding-left: 350px;">
+                  Hi, {{ user.username }}!
+                </li>
+                <li class="nav-item">
+                  <a href="/accounts/logout/" class="btn btn-primary active" role="button" aria-pressed="true">Logout</a>
+                </li>
+                </uL>
+                {% else %}
+                <a href="/accounts/login/" class="nav-link">Login</a>
+                {% endif %}
+
+              </ul>
+            </div>
+          </div>
+        </nav> 
+        
+        <div class="jumbotron-fluid" style="background-color: #ffd70f;">
+          <div class="container-fluid text-center">
+            <h3 class="display-1" style="padding-top: 0px;">PRESERVING PAWS</h2>
+            <p class="lead mb-0" style="text-align: center; padding-bottom: 40px;">...dog, man's best friend!</p>
+          </div>
+        </div>
+
+        <div class="container-fluid" style="background-color:black">
+          <div class="row" style="background-color:black;">
+            <div class="col-sm-6">
+              <div class="container">
+                <div class="h5 mx-3 my-3" style="color: grey; text-align: left;">
+                  Preserving Paws allows you to show your affection for the community of dogs.
+                   We these days regularly see canines turning out to be survivors of savagery 
+                   and consequently don't get enough assistance. Thus, this site offers you a chance 
+                   to embrace, salvage, and serve minimal destitute to young doggies who are either 
+                   repudiated or are protected from earlier demonstrations of brutality against them. 
+                   Make your pursuit on canines to discover adequate data on specific dog breeds prior 
+                   to adoption. In circumstances where you may require legitimate crisis help to report
+                    wrongdoing and savagery against canines to higher specialists, our site 
+                    encourages you associate with world animal protection association based off your area
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6" style="background-color: black;">
+              <div class="container text-center mx-3 my-3">
+                <img src="/static/images/logo.jpg" alt="logo">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+    
+          <div class="row my-4">
+            <div class="col-sm-4">
+              <div class="h3">Dog wikipedia</div>
+              <p class="text-center">
+                <img src="/static/images/wiki.jpg" alt="wiki">
+              </p>
+              <p class="text-center pt-3">
+                Teaching individuals about the various breeds of canines and their interesting 
+                qualities before adoption. See a bit of definite foundation data about unique varieties,
+                 their set of experiences, and some great realities that you might need to know!
+              </p>
+              <p class="text-center pt-4">
+                <a href="/search/" class="btn btn-primary active" role="button" aria-pressed="true">Take me there!</a>
+              </p>
+            </div>
+            <div class="col-sm-4">
+              <div class="h3">Adopt and Rescue</div>
+              <p class="text-center">
+                <img src="/static/images/adopt.jpg" alt="wiki">
+              </p>
+              <p class="text-center">
+                Lately, it is clearly seen that the brutality against these tranquil creatures has 
+                evermore expanded. Do your bit by adopting and rescuing canines as we assist you with
+                 associations that let you embrace doggies and furthermore offer sanctuary to destitute 
+                 canines
+              </p>
+              <p class="text-center pt-4">
+                <a href="/adopt/" class="btn btn-primary active" role="button" aria-pressed="true">Take me there!</a>
+              </p>
+            </div>
+            <div class="col-sm-4">
+              <div class="h3">Need help?</div>
+              <p class="text-center">
+                <img src="/static/images/help.jpg" alt="wiki">
+              </p>
+              <p class="text-center">
+                In the event that you see brutality occurring against the canines and are confounded 
+                about whom to approach, at that point you may tell us your area and email and we will 
+                in like manner connect you to one of the World Animal Protection centers serving in your 
+                general vicinity
+              </p>
+              <p class="text-center">
+                <a href="/help/" class="btn btn-primary active" role="button" aria-pressed="true">Take me there!</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

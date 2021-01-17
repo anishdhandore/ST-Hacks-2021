@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+.container h1.display-1{
+    color: #4a4a4a;
+}
+h2.lead{
+    font-size: x-large;
+}
+p.lead{
+    font-size: large;
+}
