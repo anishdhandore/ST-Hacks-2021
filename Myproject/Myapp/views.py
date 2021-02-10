@@ -62,7 +62,6 @@ def search(request):
 
             # data from wolfram api
             #inp = input("Question: ")
-            app_id = "THLPVT-K87YAXLUWE"
             client = wolframalpha.Client(app_id)
 
             res = client.query(breed)
